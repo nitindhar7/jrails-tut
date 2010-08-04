@@ -1,0 +1,11 @@
+<div class="header">Edit store</div>
+
+<div><%= flash[:error] unless flash[:error].blank? %></div>
+
+<% form_for :store, @store, :url => { :action => "update" } do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :city %>
+  <%= submit_tag "Update Store" %>
+<% end %>
+
+<div><%= link_to "Back", :controller => "store", :action => "index" %></div>

@@ -1,0 +1,23 @@
+<div class="header">Welcome to Stores</div>
+
+<div class="new_button"><%= link_to "New Store", :controller => "store", :action => "new" %></div>
+
+<div class="all_stores">
+  <table cellspacing="0" cellpadding="0" border="0">
+    <tr class="title">
+      <td class="label">Store Name</td>
+      <td class="label">Store City</td>
+    <tr/>
+    <% @stores.each do |store| %>
+    <tr class="store">
+      <td class="data"><%= store.name %></td>
+      <td class="data"><%= store.city %></td>
+      <td class="button"><%= link_to "Show", :controller => "store", :action => "show", :id => store.id %></td>
+      <td class="button"><%= link_to "Edit", :controller => "store", :action => "edit", :id => store.id %></td>
+      <td class="button"><%= link_to "Delete", :controller => "store", :action => "destroy", :id => store.id %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<div><%= flash[:notice] unless flash[:notice].blank? %></div>

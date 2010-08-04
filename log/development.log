@@ -1,0 +1,1838 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE DATABASE `jrails-tut_development` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_general_ci`[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-03 22:37:47) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Rendering store/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (208.2ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (221.3ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateEmployees (20100804023958)
+  [4;36;1mSQL (97.3ms)[0m   [0;1mCREATE TABLE `employees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `fname` varchar(30) NOT NULL, `lname` varchar(30) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateEmployees (20100804023958)
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: Table 'employees' already exists: CREATE TABLE `employees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `fname` varchar(30) NOT NULL, `lname` varchar(30) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW FIELDS FROM `employees`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `employees`[0m
+  [4;36;1mSQL (8.9ms)[0m   [0;1mSHOW KEYS FROM `employees`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateEmployees (20100804023958)
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: Table 'employees' already exists: CREATE TABLE `employees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `fname` varchar(30) NOT NULL, `lname` varchar(30) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `employees`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `employees`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `employees`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateEmployees (20100804023958)
+  [4;35;1mSQL (54.4ms)[0m   [0mDROP TABLE `employees`[0m
+  [4;36;1mSQL (90.9ms)[0m   [0;1mCREATE TABLE `employees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `fname` varchar(30) NOT NULL, `lname` varchar(30) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (207.5ms)[0m   [0mCREATE INDEX `employees_index` ON `employees` (`id`, `fname`, `lname`, `created_at`, `updated_at`)[0m
+  [4;36;1mSQL (65.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100804023958')[0m
+Migrating to CreateStores (20100804025957)
+  [4;35;1mSQL (75.5ms)[0m   [0mCREATE TABLE `stores` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(30) NOT NULL, `city` varchar(30) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (174.2ms)[0m   [0;1mCREATE INDEX `stores_index` ON `stores` (`id`, `name`, `city`, `created_at`, `updated_at`)[0m
+  [4;35;1mSQL (40.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100804025957')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `employees`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mdescribe `employees`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `employees`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `stores`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `stores`[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-03 23:21:09) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering store/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-03 23:25:37) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Rendering store/index
+
+
+ActionView::TemplateError (No route matches {:action=>"new"}) on line #3 of app/views/store/index.html.erb:
+1: <div>Welcome to Stores</div>
+2: 
+3: <div><%= link_to "New Store", :action => "new" %></div>
+
+    vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:374:in `generate'
+    vendor/rails/actionpack/lib/action_controller/url_rewriter.rb:208:in `rewrite_path'
+    vendor/rails/actionpack/lib/action_controller/url_rewriter.rb:187:in `rewrite_url'
+    vendor/rails/actionpack/lib/action_controller/url_rewriter.rb:165:in `rewrite'
+    vendor/rails/actionpack/lib/action_controller/base.rb:626:in `url_for'
+    vendor/rails/actionpack/lib/action_view/helpers/url_helper.rb:85:in `send'
+    vendor/rails/actionpack/lib/action_view/helpers/url_helper.rb:85:in `url_for'
+    vendor/rails/actionpack/lib/action_view/helpers/url_helper.rb:228:in `link_to'
+    app/views/store/index.html.erb:3
+    vendor/rails/actionpack/lib/action_view/renderable.rb:39:in `send'
+    vendor/rails/actionpack/lib/action_view/renderable.rb:39:in `render'
+    vendor/rails/actionpack/lib/action_view/template.rb:73:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:256:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1177:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1251:in `default_render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1257:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:134:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:392:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace (42.3ms)
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response (0.6ms)
+Rendering /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-03 23:30:33) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering store/index
+
+
+ActionView::TemplateError (undefined local variable or method `profiles_path' for #<ActionView::Base:0xb65c46d8>) on line #3 of app/views/store/index.html.erb:
+1: <div>Welcome to Stores</div>
+2: 
+3: <div><%= link_to "New Store", profiles_path %></div>
+
+    app/views/store/index.html.erb:3
+    vendor/rails/actionpack/lib/action_view/renderable.rb:39:in `send'
+    vendor/rails/actionpack/lib/action_view/renderable.rb:39:in `render'
+    vendor/rails/actionpack/lib/action_view/template.rb:73:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:256:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1177:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1251:in `default_render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1257:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:134:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:392:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace (26.0ms)
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response (0.5ms)
+Rendering /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-03 23:30:40) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Rendering store/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-03 23:30:43) [GET]
+
+
+NameError (uninitialized constant StoresController):
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:445:in `load_missing_constant'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:77:in `const_missing'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:89:in `const_missing'
+    /vendor/rails/activesupport/lib/active_support/inflector.rb:352:in `constantize'
+    /vendor/rails/activesupport/lib/active_support/inflector.rb:351:in `each'
+    /vendor/rails/activesupport/lib/active_support/inflector.rb:351:in `constantize'
+    /vendor/rails/activesupport/lib/active_support/core_ext/string/inflections.rb:162:in `constantize'
+    /vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:392:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace (21.9ms)
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response (0.5ms)
+Rendering /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-03 23:31:45) [GET]
+
+
+NameError (uninitialized constant StoresController):
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:445:in `load_missing_constant'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:77:in `const_missing'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:89:in `const_missing'
+    /vendor/rails/activesupport/lib/active_support/inflector.rb:352:in `constantize'
+    /vendor/rails/activesupport/lib/active_support/inflector.rb:351:in `each'
+    /vendor/rails/activesupport/lib/active_support/inflector.rb:351:in `constantize'
+    /vendor/rails/activesupport/lib/active_support/core_ext/string/inflections.rb:162:in `constantize'
+    /vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:392:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace (19.0ms)
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response (0.5ms)
+Rendering /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-03 23:31:48) [GET]
+
+
+NameError (uninitialized constant StoresController):
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:445:in `load_missing_constant'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:77:in `const_missing'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:89:in `const_missing'
+    /vendor/rails/activesupport/lib/active_support/inflector.rb:352:in `constantize'
+    /vendor/rails/activesupport/lib/active_support/inflector.rb:351:in `each'
+    /vendor/rails/activesupport/lib/active_support/inflector.rb:351:in `constantize'
+    /vendor/rails/activesupport/lib/active_support/core_ext/string/inflections.rb:162:in `constantize'
+    /vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:392:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace (19.8ms)
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response (0.6ms)
+Rendering /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-03 23:32:44) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering store/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-03 23:32:59) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Rendering store/index
+
+
+ActionView::TemplateError (store_url failed to generate from {:action=>"show", :controller=>"stores"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["stores", :id] - are they all satisfied?) on line #3 of app/views/store/index.html.erb:
+1: <div>Welcome to Stores</div>
+2: 
+3: <div><%= link_to "New Store", store_path %></div>
+
+    vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:385:in `raise_named_route_error'
+    vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:345:in `generate'
+    vendor/rails/actionpack/lib/action_controller/url_rewriter.rb:208:in `rewrite_path'
+    vendor/rails/actionpack/lib/action_controller/url_rewriter.rb:187:in `rewrite_url'
+    vendor/rails/actionpack/lib/action_controller/url_rewriter.rb:165:in `rewrite'
+    vendor/rails/actionpack/lib/action_controller/base.rb:626:in `url_for'
+    vendor/rails/actionpack/lib/action_view/helpers/url_helper.rb:85:in `send'
+    vendor/rails/actionpack/lib/action_view/helpers/url_helper.rb:85:in `url_for'
+    (eval):16:in `store_path'
+    app/views/store/index.html.erb:3
+    vendor/rails/actionpack/lib/action_view/renderable.rb:39:in `send'
+    vendor/rails/actionpack/lib/action_view/renderable.rb:39:in `render'
+    vendor/rails/actionpack/lib/action_view/template.rb:73:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:256:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1177:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1251:in `default_render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1257:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:134:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:392:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace (30.0ms)
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response (0.5ms)
+Rendering /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-03 23:33:50) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering store/index
+
+
+ActionView::TemplateError (No route matches {:action=>"new", :controller=>"store"}) on line #3 of app/views/store/index.html.erb:
+1: <div>Welcome to Stores</div>
+2: 
+3: <div><%= link_to "New Store", :controller => "store", :action => "new" %></div>
+
+    vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:374:in `generate'
+    vendor/rails/actionpack/lib/action_controller/url_rewriter.rb:208:in `rewrite_path'
+    vendor/rails/actionpack/lib/action_controller/url_rewriter.rb:187:in `rewrite_url'
+    vendor/rails/actionpack/lib/action_controller/url_rewriter.rb:165:in `rewrite'
+    vendor/rails/actionpack/lib/action_controller/base.rb:626:in `url_for'
+    vendor/rails/actionpack/lib/action_view/helpers/url_helper.rb:85:in `send'
+    vendor/rails/actionpack/lib/action_view/helpers/url_helper.rb:85:in `url_for'
+    vendor/rails/actionpack/lib/action_view/helpers/url_helper.rb:228:in `link_to'
+    app/views/store/index.html.erb:3
+    vendor/rails/actionpack/lib/action_view/renderable.rb:39:in `send'
+    vendor/rails/actionpack/lib/action_view/renderable.rb:39:in `render'
+    vendor/rails/actionpack/lib/action_view/template.rb:73:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:256:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1177:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1251:in `default_render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1257:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:134:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:392:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace (29.3ms)
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response (0.5ms)
+Rendering /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-03 23:34:44) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Rendering store/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-03 23:37:44) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering store/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-03 23:43:03) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering store/index
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#new (for 127.0.0.1 at 2010-08-03 23:43:06) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering store/new
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/store/new]
+
+
+Processing StoreController#new (for 127.0.0.1 at 2010-08-03 23:44:19) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Rendering store/new
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/store/new]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-03 23:44:21) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering store/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-03 23:56:00) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.7ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering store/index
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StoreController#new (for 127.0.0.1 at 2010-08-03 23:56:04) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Rendering store/new
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/store/new]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-03 23:57:27) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering store/index
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#new (for 127.0.0.1 at 2010-08-03 23:57:28) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Rendering store/new
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/store/new]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 00:16:33) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering store/index
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#new (for 127.0.0.1 at 2010-08-04 00:16:34) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Rendering store/new
+Completed in 14ms (View: 4, DB: 1) | 200 OK [http://localhost/store/new]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 00:16:37) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering store/index
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 00:16:38) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering store/index
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#new (for 127.0.0.1 at 2010-08-04 00:16:40) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Rendering store/new
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/store/new]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 00:39:23) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering store/index
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 00:39:25) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering store/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#new (for 127.0.0.1 at 2010-08-04 00:39:27) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Rendering store/new
+Completed in 48ms (View: 42, DB: 1) | 200 OK [http://localhost/store/new]
+
+
+Processing StoreController#create (for 127.0.0.1 at 2010-08-04 00:39:42) [POST]
+  Parameters: {"commit"=>"Create Store", "authenticity_token"=>"d38f6dfdd52e54051f70ec2df852cbf583421cf8", "store"=>{"city"=>"New York", "name"=>"Gristides"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (3.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mStore Create (0.3ms)[0m   [0;1mINSERT INTO `stores` (`name`, `city`, `created_at`, `updated_at`) VALUES('Gristides', 'New York', '2010-08-04 00:39:42', '2010-08-04 04:39:42')[0m
+  [4;35;1mSQL (38.5ms)[0m   [0mCOMMIT[0m
+Redirected to actionshowid1
+Completed in 163ms (DB: 43) | 302 Found [http://localhost/store/create]
+
+
+Processing StoreController#show (for 127.0.0.1 at 2010-08-04 00:39:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mStore Load (13.7ms)[0m   [0;1mSELECT * FROM `stores` WHERE (`stores`.`id` = 1) [0m
+Rendering store/show
+Completed in 22ms (View: 3, DB: 14) | 200 OK [http://localhost/store/show/1]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 00:43:09) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering store/index
+  [4;35;1mStore Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#new (for 127.0.0.1 at 2010-08-04 00:43:19) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Rendering store/new
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/store/new]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 00:44:29) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.6ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 00:53:23) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering store/index
+  [4;35;1mStore Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#show (for 127.0.0.1 at 2010-08-04 00:53:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mStore Load (0.0ms)[0m   [0;1mSELECT * FROM `stores` WHERE (`stores`.`id` = 1) [0m
+Rendering store/show
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/store/show/1]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 00:53:37) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#new (for 127.0.0.1 at 2010-08-04 00:56:07) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Rendering store/new
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/store/new]
+
+
+Processing StoreController#create (for 127.0.0.1 at 2010-08-04 00:56:09) [POST]
+  Parameters: {"commit"=>"Create Store", "authenticity_token"=>"d38f6dfdd52e54051f70ec2df852cbf583421cf8", "store"=>{"city"=>"", "name"=>""}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+Redirected to actionnew
+Completed in 48ms (DB: 1) | 302 Found [http://localhost/store/create]
+
+
+Processing StoreController#new (for 127.0.0.1 at 2010-08-04 00:56:10) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Rendering store/new
+Completed in 13ms (View: 4, DB: 1) | 200 OK [http://localhost/store/new]
+
+
+Processing StoreController#create (for 127.0.0.1 at 2010-08-04 00:56:26) [POST]
+  Parameters: {"commit"=>"Create Store", "authenticity_token"=>"d38f6dfdd52e54051f70ec2df852cbf583421cf8", "store"=>{"city"=>"", "name"=>"asdasd"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Redirected to actionnew
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/store/create]
+
+
+Processing StoreController#new (for 127.0.0.1 at 2010-08-04 00:56:26) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Rendering store/new
+Completed in 11ms (View: 4, DB: 2) | 200 OK [http://localhost/store/new]
+
+
+Processing StoreController#create (for 127.0.0.1 at 2010-08-04 00:56:30) [POST]
+  Parameters: {"commit"=>"Create Store", "authenticity_token"=>"d38f6dfdd52e54051f70ec2df852cbf583421cf8", "store"=>{"city"=>"asdasd", "name"=>""}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Redirected to actionnew
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/store/create]
+
+
+Processing StoreController#new (for 127.0.0.1 at 2010-08-04 00:56:30) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Rendering store/new
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/store/new]
+
+
+Processing StoreController#create (for 127.0.0.1 at 2010-08-04 00:56:42) [POST]
+  Parameters: {"commit"=>"Create Store", "authenticity_token"=>"d38f6dfdd52e54051f70ec2df852cbf583421cf8", "store"=>{"city"=>"Los Angeles", "name"=>"Foot Locker"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStore Create (0.2ms)[0m   [0mINSERT INTO `stores` (`name`, `city`, `created_at`, `updated_at`) VALUES('Foot Locker', 'Los Angeles', '2010-08-04 00:56:42', '2010-08-04 04:56:42')[0m
+  [4;36;1mSQL (85.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to actionshowid2
+Completed in 97ms (DB: 87) | 302 Found [http://localhost/store/create]
+
+
+Processing StoreController#show (for 127.0.0.1 at 2010-08-04 00:56:42) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` WHERE (`stores`.`id` = 2) [0m
+Rendering store/show
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://localhost/store/show/2]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 00:56:44) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering store/index
+  [4;36;1mStore Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 00:56:54) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:03:22) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#edit (for 127.0.0.1 at 2010-08-04 01:03:29) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mStore Load (0.0ms)[0m   [0mSELECT * FROM `stores` WHERE (`stores`.`id` = 2) [0m
+Rendering store/edit
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/store/edit/2]
+
+
+Processing StoreController#update (for 127.0.0.1 at 2010-08-04 01:03:40) [POST]
+  Parameters: {"commit"=>"Update Store", "authenticity_token"=>"d38f6dfdd52e54051f70ec2df852cbf583421cf8", "id"=>"2", "store"=>{"city"=>"San Diego", "name"=>"Foot Locker"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.name=):
+    /app/controllers/store_controller.rb:36:in `update'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:134:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:392:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace (22.6ms)
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response (0.6ms)
+Rendering /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:09:38) [GET]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (3.7ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering store/index
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 50ms (View: 39, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing StoreController#edit (for 127.0.0.1 at 2010-08-04 01:09:41) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mStore Load (0.0ms)[0m   [0mSELECT * FROM `stores` WHERE (`stores`.`id` = 2) [0m
+Rendering store/edit
+Completed in 14ms (View: 6, DB: 1) | 200 OK [http://localhost/store/edit/2]
+
+
+Processing StoreController#update (for 127.0.0.1 at 2010-08-04 01:10:04) [POST]
+  Parameters: {"commit"=>"Update Store", "authenticity_token"=>"d38f6dfdd52e54051f70ec2df852cbf583421cf8", "id"=>"2", "store"=>{"city"=>"San Diego", "name"=>"Foot Locker"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:14:49) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 34ms (View: 28, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#edit (for 127.0.0.1 at 2010-08-04 01:14:52) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mStore Load (0.0ms)[0m   [0mSELECT * FROM `stores` WHERE (`stores`.`id` = 2) [0m
+Rendering store/edit
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/store/edit/2]
+
+
+Processing StoreController#update (for 127.0.0.1 at 2010-08-04 01:15:03) [POST]
+  Parameters: {"commit"=>"Update Store", "authenticity_token"=>"d38f6dfdd52e54051f70ec2df852cbf583421cf8", "id"=>"2", "store"=>{"city"=>"San Diego", "name"=>"Foot Locker"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mStore Load (1.5ms)[0m   [0;1mSELECT * FROM `stores` WHERE (`stores`.`id` = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mStore Update (22.0ms)[0m   [0;1mUPDATE `stores` SET `updated_at` = '2010-08-04 05:15:03', `city` = 'San Diego' WHERE `id` = 2[0m
+  [4;35;1mSQL (67.4ms)[0m   [0mCOMMIT[0m
+Redirected to actionshowid2
+Completed in 102ms (DB: 92) | 302 Found [http://localhost/store/update/2]
+
+
+Processing StoreController#show (for 127.0.0.1 at 2010-08-04 01:15:03) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM `stores` WHERE (`stores`.`id` = 2) [0m
+Rendering store/show
+Completed in 9ms (View: 2, DB: 1) | 200 OK [http://localhost/store/show/2]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:15:07) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#new (for 127.0.0.1 at 2010-08-04 01:15:17) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Rendering store/new
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/store/new]
+
+
+Processing StoreController#create (for 127.0.0.1 at 2010-08-04 01:15:27) [POST]
+  Parameters: {"commit"=>"Create Store", "authenticity_token"=>"d38f6dfdd52e54051f70ec2df852cbf583421cf8", "store"=>{"city"=>"Chelmsford", "name"=>"Wal Mart"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStore Create (0.2ms)[0m   [0mINSERT INTO `stores` (`name`, `city`, `created_at`, `updated_at`) VALUES('Wal Mart', 'Chelmsford', '2010-08-04 01:15:27', '2010-08-04 05:15:27')[0m
+  [4;36;1mSQL (56.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to actionshowid3
+Completed in 67ms (DB: 58) | 302 Found [http://localhost/store/create]
+
+
+Processing StoreController#show (for 127.0.0.1 at 2010-08-04 01:15:27) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM `stores` WHERE (`stores`.`id` = 3) [0m
+Rendering store/show
+Completed in 9ms (View: 2, DB: 1) | 200 OK [http://localhost/store/show/3]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:15:29) [GET]
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:24:25) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering store/index
+  [4;35;1mStore Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#delete (for 127.0.0.1 at 2010-08-04 01:24:29) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+ActionController::UnknownAction (No action responded to delete. Actions: create, destroy, edit, index, new, show, and update):
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:134:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:392:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:24:58) [GET]
+  [4;35;1mSQL (1.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing StoreController#destroy (for 127.0.0.1 at 2010-08-04 01:25:00) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Delete all (41.7ms)[0m   [0mDELETE FROM `stores` WHERE (`id` IN ('3')) [0m
+Redirected to actionindex
+Completed in 48ms (DB: 42) | 302 Found [http://localhost/store/destroy/3]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:25:00) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering store/index
+  [4;36;1mStore Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#new (for 127.0.0.1 at 2010-08-04 01:25:31) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Rendering store/new
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/store/new]
+
+
+Processing StoreController#create (for 127.0.0.1 at 2010-08-04 01:25:46) [POST]
+  Parameters: {"commit"=>"Create Store", "authenticity_token"=>"d38f6dfdd52e54051f70ec2df852cbf583421cf8", "store"=>{"city"=>"Queens", "name"=>"Barnes & Nobles"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mBEGIN[0m
+  [4;36;1mStore Create (0.1ms)[0m   [0;1mINSERT INTO `stores` (`name`, `city`, `created_at`, `updated_at`) VALUES('Barnes & Nobles', 'Queens', '2010-08-04 01:25:46', '2010-08-04 05:25:46')[0m
+  [4;35;1mSQL (49.4ms)[0m   [0mCOMMIT[0m
+Redirected to actionshowid4
+Completed in 59ms (DB: 51) | 302 Found [http://localhost/store/create]
+
+
+Processing StoreController#show (for 127.0.0.1 at 2010-08-04 01:25:46) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` WHERE (`stores`.`id` = 4) [0m
+Rendering store/show
+Completed in 9ms (View: 2, DB: 1) | 200 OK [http://localhost/store/show/4]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:25:49) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#destroy (for 127.0.0.1 at 2010-08-04 01:25:52) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Delete all (59.7ms)[0m   [0mDELETE FROM `stores` WHERE (`id` IN ('2')) [0m
+Redirected to actionindex
+Completed in 66ms (DB: 60) | 302 Found [http://localhost/store/destroy/2]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:25:52) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering store/index
+  [4;36;1mStore Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:31:14) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:33:45) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:33:47) [GET]
+  [4;35;1mSQL (0.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.5ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:33:47) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:33:47) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:33:48) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:36:53) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:36:53) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:36:54) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:36:54) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:36:54) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:36:54) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:36:54) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:36:54) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:36:54) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:36:55) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:36:55) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:37:17) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 49ms (View: 44, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:37:20) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:37:21) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:37:49) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:38:21) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:38:22) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:38:22) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:38:41) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:39:04) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 16ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:39:18) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:39:37) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:39:55) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 14ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:40:04) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:40:19) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:40:20) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.9ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:40:22) [GET]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:40:38) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:42:32) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:42:50) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:42:55) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:42:55) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:43:05) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:43:14) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:44:23) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:44:30) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:44:41) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:46:38) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:48:28) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:49:04) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:49:59) [GET]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:50:44) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:51:27) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:52:02) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:52:55) [GET]
+  [4;35;1mSQL (0.9ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:54:27) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:55:04) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:55:55) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:57:24) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 49ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:57:47) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 01:58:33) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 02:00:27) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 02:01:29) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 02:02:18) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 02:03:06) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 02:03:13) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 02:03:13) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 02:03:13) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Completed in 50ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-04 02:03:42) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mStore Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/]

@@ -1,0 +1,23 @@
+development:
+  adapter: mysql
+  database: jrails-tut_development
+  username: root
+  password: 
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: mysql
+  database: jrails-tut_test
+  username: root
+  password: 
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: mysql
+  database: jrails-tut_test
+  username: root
+  password: 
+  pool: 5
+  timeout: 5000
