@@ -82,13 +82,13 @@ We need a way to change the sort order when the links are clicked again. Add:
 to the ':with' parameter for the link_to_remote tag. This will pass the @order variable (retrieved from the controller action)
 to a custom helper method called `sort_order`. Sort order checks if order was previously set (`!order.blank?`) and if order is ascending
 
-`def sort_order(order)
-  if !order.blank? && order == 'ASC'
-    'DESC'
-  else
-    'ASC'
-  end
-`end
+`def sort_order(order)`
+`  if !order.blank? && order == 'ASC'`
+`    'DESC'`
+`  else`
+`    'ASC'`
+`  end`
+`end`
 
 The result of this is that of the order was already set and it was ASCENDING, the new order will become DESCENDING. If either the order
 was not set previously or if the order was not ASCENDING, the order is changed to ASCENDING. Using the helper method `sort_order` is critical
