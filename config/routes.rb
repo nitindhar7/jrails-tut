@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'store/edit/:id', :controller => 'store', :action => 'edit'
   map.connect 'store/update/:id', :controller => 'store', :action => 'update'
   map.connect 'store/destroy/:id', :controller => 'store', :action => 'destroy'
+  map.connect 'store/sort', :controller => 'store', :action => 'sort'
 
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'

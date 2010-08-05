@@ -1,2 +1,8 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+$(document).ready(function() {
+  color_rows();
+});
+
+function color_rows() {
+  $("#stores .store:even").css('background', '#EFEFEF');
+  $("#stores .store:odd").css('background', '#FFF');
+}

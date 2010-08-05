@@ -1,6 +1,14 @@
 class StoreController < ApplicationController
+  
   def index
-    @stores = Store.find(:all)
+    @sort  = params[:sort]
+    @order = params[:order]
+    
+    if @sort.blank?
+      @stores = Store.find(:all)
+    else
+      @stores = Store.find(:all, :order => "#{@sort} #{@order}") 
+    end
   end
   
   def new
@@ -53,6 +61,17 @@ class StoreController < ApplicationController
     else
       flash[:error] = "Failed to delete store"
       redirect_to :action => "index"
+    end
+  end
+  
+  def sort
+    @sort  = params[:sort]
+    @order = params[:order]
+    
+    if @sort.blank?
+      @stores = Store.find(:all)
+    else
+      @stores = Store.find(:all, :order => "#{@sort} #{@order}") 
     end
   end
 

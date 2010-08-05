@@ -1,11 +1,14 @@
 <div class="header">Store Information</div>
 
-<div><%= flash[:notice] unless flash[:notice].blank? %></div>
+<% unless flash[:notice].blank? %>
+<div class="notice"><%= flash[:notice] %></div>
+<% end %>
 
-<div><%= @store.id %></div>
-<div><%= @store.name %></div>
-<div><%= @store.city %></div>
-<div><%= @store.created_at %></div>
-<div><%= @store.updated_at %></div>
+<div class="store_info">
+  <div class="label">Store Name: </div>
+  <div class="value"><%= @store.name %></div>
+  <div class="label">Store City: </div>
+  <div class="value"><%= @store.city %></div>
+</div>
 
-<div><%= link_to "Back", :controller => "store", :action => "index" %></div>
+<div class="back"><%= link_to "Back", :controller => "store", :action => "index" %></div>

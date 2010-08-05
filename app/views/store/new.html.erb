@@ -1,11 +1,15 @@
-<div class="header">Add new store</div>
+<div class="header">Add New Store</div>
 
-<div><%= flash[:error] unless flash[:error].blank? %></div>
-
-<% form_for :store, @store, :url => { :action => "create" } do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_field :city %>
-  <%= submit_tag "Create Store" %>
+<% unless flash[:error].blank? %>
+<div class="error"><%= flash[:error] %></div>
 <% end %>
 
-<div><%= link_to "Back", :controller => "store", :action => "index" %></div>
+<% form_for :store, @store, :url => {:action => "create"}, :html => {:id => "store_form"} do |f| %>
+  <%= label_tag(:store_name, "Store Name", :class => "label") %>
+  <%= f.text_field :name, :class => "field" %>
+  <%= label_tag(:store_city, "Store City", :class => "label") %>
+  <%= f.text_field :city, :class => "field" %>
+  <%= submit_tag "Create Store", :class => "submit" %>
+<% end %>
+
+<div class="back"><%= link_to "Back", :controller => "store", :action => "index" %></div>

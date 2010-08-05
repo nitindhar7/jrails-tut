@@ -1,4 +1,4 @@
-* { padding: 0; margin: 0; font-family: Helvetica; font-size: 12px; }
+* { padding: 0; margin: 0; font-family: Helvetica; font-size: 12px; outline: none; }
 
 .header {
   position: relative;
@@ -13,6 +13,7 @@
   color: #FFF;
 }
 
+.back,
 .new_button {
   position: relative;
   margin: auto;
@@ -21,6 +22,7 @@
   height: 20px;
 }
 
+.back a,
 .new_button a {
   display: block;
   width: 100px;
@@ -29,46 +31,140 @@
   text-decoration: none;
   text-align: center;
   background: #DDD;
+  color: #333;
 }
 
+.back a:hover,
 .new_button a:hover {
   background: #EFEFEF;
 }
 
-.all_stores {
+#stores {
   position: relative;
   margin: auto;
   margin-bottom: 10px;
   width: 900px;
+  clear: both;
 }
 
-.all_stores .title,
-.all_stores .store {
+.sort,
+#stores .store {
   width: 900px;
   height: 20px;
   line-height: 20px;
+  clear: both;
 }
 
-.all_stores .title {
-  border-bottom: 3px solid #555;
-  border-top: 3px solid #555;
+#stores .store:hover {
+  background: #CCC;
 }
 
-.all_stores .info td {
+.sort {
+  margin: auto;
+  border-bottom: 1px solid #555;
+  border-top: 1px solid #555;
+}
+
+.sort .label {
   width: 300px;
-  height: 20px;
-  line-height: 20px;
+  float: left;
 }
 
-.all_stores .store td {
-  height: 20px;
-  line-height: 20px;
-}
-
-.all_stores .store .data {
+.sort .label a {
+  display: block;
   width: 300px;
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-.all_stores .store .button {
+.sort .label a:hover {
+  text-decoration: underline;
+}
+
+#stores .store .data {
+  width: 300px;
+  float: left;
+}
+
+#stores .store .button {
   width: 100px;
+  float: left;
+}
+
+#store_form {
+  position: relative;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 880px;
+  background: #EFEFEF;
+}
+
+#store_form input {
+  height: 20px;
+  border: 1px solid #666;
+}
+
+#new_store_form .label {
+  display: block;
+  width: 150px;
+  height: 20px;
+  line-height: 20px;
+}
+
+#store_form .field {
+  margin-bottom: 10px;
+  width: 250px;
+}
+
+#store_form .submit {
+  display: block;
+  width: 100px;
+}
+
+.error {
+  margin: auto;
+  margin-bottom: 10px;
+  width: 898px;
+  height: 20px;
+  line-height: 20px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #FE2E2E;
+  background: #F6E3CE;
+  color: #FE2E2E;
+}
+
+.notice {
+  margin: auto;
+  margin-bottom: 10px;
+  width: 898px;
+  height: 20px;
+  line-height: 20px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #04B404;
+  background: #CEF6CE;
+  color: #04B404;
+}
+
+.store_info {
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 880px;
+  background: #EFEFEF;
+}
+
+.store_info .label {
+  width: 200px;
+  line-height: 20px;
+  font-weight: bold;
+}
+
+.store_info .value {
+  margin-bottom: 10px;
+  width: 200px;
+  line-height: 20px;
 }
