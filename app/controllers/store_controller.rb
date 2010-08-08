@@ -53,14 +53,12 @@ class StoreController < ApplicationController
   end
   
   def sort
-    @sort  = params[:sort]
+    @sort = params[:sort]
     @order = params[:order]
     
-    if @sort.blank?
-      @stores = Store.find(:all)
-    else
-      @stores = Store.find(:all, :order => "#{@sort} #{@order}") 
-    end
+    debugger
+    
+    @stores = Store.paginate(:page => params[:page] || 1, :per_page => 10, :order => "#{@sort} #{@order}")
   end
 
 end
