@@ -2,8 +2,9 @@
 
 <div class="new_button"><%= link_to "New Store", :controller => "store", :action => "new" %></div>
 
+<%= render :partial => "sort" %>
+
 <div id="stores">
-  <%= render :partial => "sort" %>
   <%= render :partial => "store" %>
 </div>
 

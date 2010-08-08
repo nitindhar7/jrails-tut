@@ -1,5 +1,5 @@
 <div class="sort">
   <div class="label"><%= link_to_remote("Store Name", :update => "stores", :url => {:action => "sort"}, :with => "'sort=name&order=#{sort_order(@order)}'") %></div>
   <div class="label"><%= link_to_remote("Store City", :update => "stores", :url => {:action => "sort"}, :with => "'sort=city&order=#{sort_order(@order)}'") %></div>
-  <%= will_paginate @stores %>
+  <%= will_paginate @stores, :params => {:sort => @sort, :order => @order} %>
 </div>
