@@ -10893,3 +10893,2081 @@ Rendering store/index
 Rendered store/_sort (6.5ms)
 Rendered store/_store (13.0ms)
 Completed in 40ms (View: 26, DB: 2) | 200 OK [http://localhost/store/sort?order=ASC&page=1&sort=name]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:20:42) [GET]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (3.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.8ms)
+Rendered store/_store (13.6ms)
+Completed in 39ms (View: 26, DB: 4) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:20:45) [GET]
+  Parameters: {"page"=>"2"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 10, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (7.3ms)
+Rendered store/_store (11.9ms)
+Completed in 39ms (View: 28, DB: 2) | 200 OK [http://localhost/store?page=2]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:20:46) [GET]
+  Parameters: {"page"=>"3"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM `stores` LIMIT 20, 10[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (6.4ms)
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Rendered store/_store (4.9ms)
+Completed in 28ms (View: 18, DB: 1) | 200 OK [http://localhost/store?page=3]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:20:46) [GET]
+  Parameters: {"page"=>"1"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.5ms)
+Rendered store/_store (12.4ms)
+Completed in 35ms (View: 25, DB: 1) | 200 OK [http://localhost/store?page=1]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:20:49) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;35;1mStore Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.7ms)
+Rendered store/_store (12.4ms)
+Completed in 35ms (View: 25, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:20:50) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (6.3ms)
+Rendered store/_store (12.0ms)
+Completed in 34ms (View: 24, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:20:52) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (6.2ms)
+Rendered store/_store (11.9ms)
+Completed in 33ms (View: 24, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:20:53) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (6.2ms)
+Rendered store/_store (11.9ms)
+Completed in 33ms (View: 24, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:20:54) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"DESC", "sort"=>"name"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` ORDER BY name DESC LIMIT 0, 10[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (6.2ms)
+Rendered store/_store (11.8ms)
+Completed in 33ms (View: 24, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:20:55) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (6.5ms)
+Rendered store/_store (12.2ms)
+Completed in 34ms (View: 25, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:20:57) [GET]
+  Parameters: {"order"=>"ASC", "page"=>"2", "sort"=>"name"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (1.7ms)[0m   [0;1mSELECT * FROM `stores` ORDER BY name ASC LIMIT 10, 10[0m
+  [4;35;1mStore Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (8.6ms)
+Rendered store/_store (12.1ms)
+Completed in 42ms (View: 30, DB: 3) | 200 OK [http://localhost/store/sort?order=ASC&page=2&sort=name]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:22:17) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.4ms)
+Rendered store/_store (16.0ms)
+Completed in 37ms (View: 28, DB: 1) | 200 OK [http://localhost/store/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:22:20) [GET]
+  Parameters: {"page"=>"2"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM `stores` LIMIT 10, 10[0m
+  [4;35;1mStore Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (6.4ms)
+Rendered store/_store (11.9ms)
+Completed in 36ms (View: 25, DB: 1) | 200 OK [http://localhost/store?page=2]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:22:20) [GET]
+  Parameters: {"page"=>"3"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` LIMIT 20, 10[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (6.7ms)
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Rendered store/_store (4.4ms)
+Completed in 25ms (View: 18, DB: 0) | 200 OK [http://localhost/store?page=3]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:22:21) [GET]
+  Parameters: {"page"=>"1"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.8ms)
+Rendered store/_store (16.0ms)
+Completed in 38ms (View: 28, DB: 1) | 200 OK [http://localhost/store?page=1]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:22:23) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.5ms)
+Rendered store/_store (12.2ms)
+Completed in 34ms (View: 24, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:22:25) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering store/sort
+Rendered store/_sort (6.5ms)
+Rendered store/_store (12.1ms)
+Completed in 33ms (View: 23, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:22:48) [GET]
+  Parameters: {"order"=>"ASC", "page"=>"2", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 10, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering store/sort
+Rendered store/_sort (7.9ms)
+Rendered store/_store (12.1ms)
+Completed in 34ms (View: 24, DB: 1) | 200 OK [http://localhost/store/sort?order=ASC&page=2&sort=name]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:25:17) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.6ms)
+Rendered store/_store (12.2ms)
+Completed in 34ms (View: 24, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:25:19) [GET]
+  Parameters: {"page"=>"2"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 10, 10[0m
+  [4;36;1mStore Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (6.5ms)
+Rendered store/_store (12.4ms)
+Completed in 36ms (View: 25, DB: 1) | 200 OK [http://localhost/store?page=2]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:25:21) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (8.4ms)
+Rendered store/_store (11.9ms)
+Completed in 38ms (View: 28, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:25:22) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering store/index
+Rendered store/_sort (6.1ms)
+Rendered store/_store (11.9ms)
+Completed in 43ms (View: 23, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:25:25) [GET]
+  Parameters: {"order"=>"ASC", "page"=>"2", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 10, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering store/index
+Rendered store/_sort (7.8ms)
+Rendered store/_store (12.1ms)
+Completed in 34ms (View: 25, DB: 1) | 200 OK [http://localhost/store/sort?order=ASC&page=2&sort=name]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:26:04) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.5ms)
+Rendered store/_store (19.3ms)
+Completed in 42ms (View: 31, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:26:06) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering store/index
+Rendered store/_store (12.3ms)
+Completed in 26ms (View: 17, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:32:01) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.5ms)
+Rendered store/_store (11.9ms)
+Completed in 37ms (View: 26, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:32:02) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering store/index.js.rjs
+Rendered store/_store (13.7ms)
+Completed in 32ms (View: 23, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:33:51) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.4ms)
+Rendered store/_store (11.8ms)
+Completed in 33ms (View: 23, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:33:53) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering store/index
+ERROR: compiling _run_rjs_app47views47store47index46js46rjs RAISED compile error
+/home/ndhar/Documents/jrails-tut/app/views/store/index.js.rjs:1: syntax error, unexpected '=', expecting kEND
+...me::JS;update_page do |page|;= debugger
+                              ^
+Function body:           def _run_rjs_app47views47store47index46js46rjs(local_assigns)
+            old_output_buffer = output_buffer;;controller.response.content_type ||= Mime::JS;update_page do |page|;= debugger
+page.replace_html("rows", :partial => "store" , :object => @stores)
+
+end
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/ndhar/Documents/jrails-tut/app/views/store/index.js.rjs:7:in `compile!'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_view/renderable.rb:66:in `compile'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_view/renderable.rb:64:in `synchronize'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_view/renderable.rb:64:in `compile'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_view/renderable.rb:26:in `render'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_view/template.rb:73:in `render_template'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_view/base.rb:256:in `render'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/base.rb:1177:in `render_for_file'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/base.rb:905:in `render_without_benchmark'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/home/ndhar/Documents/jrails-tut/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/home/ndhar/Documents/jrails-tut/app/controllers/store_controller.rb:68:in `sort'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `send'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+/home/ndhar/Documents/jrails-tut/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/home/ndhar/Documents/jrails-tut/vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/session_management.rb:134:in `process'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/base.rb:392:in `process'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:184:in `handle_request'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+/home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+/home/ndhar/Documents/jrails-tut/vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+/home/ndhar/Documents/jrails-tut/vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+/home/ndhar/Documents/jrails-tut/vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+/home/ndhar/Documents/jrails-tut/vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+/home/ndhar/Documents/jrails-tut/vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/home/ndhar/Documents/jrails-tut/vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+/home/ndhar/Documents/jrails-tut/vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+/home/ndhar/Documents/jrails-tut/vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+/home/ndhar/Documents/jrails-tut/vendor/rails/railties/lib/commands/server.rb:49
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/home/ndhar/Documents/jrails-tut/script/server:3
+/var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:125:in `debug_load'
+/var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:125:in `debug_program'
+/var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:412
+/var/lib/gems/1.8/bin/rdebug:19:in `load'
+/var/lib/gems/1.8/bin/rdebug:19
+
+
+ActionView::TemplateError (compile error
+/home/ndhar/Documents/jrails-tut/app/views/store/index.js.rjs:1: syntax error, unexpected '=', expecting kEND
+...me::JS;update_page do |page|;= debugger
+                              ^) on line #1 of app/views/store/index.js.rjs:
+1: = debugger
+2: page.replace_html("rows", :partial => "store" , :object => @stores)
+
+    app/views/store/index.js.rjs:7:in `compile!'
+    vendor/rails/actionpack/lib/action_view/renderable.rb:66:in `compile'
+    vendor/rails/actionpack/lib/action_view/renderable.rb:64:in `synchronize'
+    vendor/rails/actionpack/lib/action_view/renderable.rb:64:in `compile'
+    vendor/rails/actionpack/lib/action_view/renderable.rb:26:in `render'
+    vendor/rails/actionpack/lib/action_view/template.rb:73:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:256:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1177:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:905:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    app/controllers/store_controller.rb:68:in `sort'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:134:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:392:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:125:in `debug_load'
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:125:in `debug_program'
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:412
+    /var/lib/gems/1.8/bin/rdebug:19:in `load'
+    /var/lib/gems/1.8/bin/rdebug:19
+
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace (47.9ms)
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response (0.8ms)
+Rendering /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:34:14) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering store/index
+
+
+ActionView::TemplateError (No such file or directory - /home/ndhar/Documents/jrails-tut/app/views/store/_store.html.erb) on line #2 of app/views/store/index.js.rjs:
+1: debugger
+2: page.replace_html("rows", :partial => "store" , :object => @stores)
+
+    vendor/rails/actionpack/lib/action_view/template.rb:63:in `read'
+    vendor/rails/actionpack/lib/action_view/template.rb:63:in `_unmemoized_source'
+    vendor/rails/activesupport/lib/active_support/memoizable.rb:57:in `source'
+    vendor/rails/activesupport/lib/active_support/memoizable.rb:25:in `__send__'
+    vendor/rails/activesupport/lib/active_support/memoizable.rb:25:in `memoize_all'
+    vendor/rails/activesupport/lib/active_support/memoizable.rb:22:in `each'
+    vendor/rails/activesupport/lib/active_support/memoizable.rb:22:in `memoize_all'
+    vendor/rails/activesupport/lib/active_support/memoizable.rb:17:in `freeze'
+    vendor/rails/activesupport/lib/active_support/memoizable.rb:70:in `_pick_template'
+    vendor/rails/actionpack/lib/action_view/partials.rb:199:in `_unmemoized__pick_partial_template'
+    vendor/rails/activesupport/lib/active_support/memoizable.rb:70:in `_pick_partial_template'
+    vendor/rails/actionpack/lib/action_view/partials.rb:152:in `render_partial'
+    vendor/rails/actionpack/lib/action_view/base.rb:258:in `render'
+    vendor/rails/actionpack/lib/action_view/helpers/prototype_helper.rb:1002:in `render'
+    vendor/plugins/jrails/lib/jrails.rb:83:in `insert_html'
+    vendor/plugins/jrails/lib/jrails.rb:87:in `replace_html'
+    app/views/store/index.js.rjs:2
+    vendor/rails/actionpack/lib/action_view/helpers/prototype_helper.rb:587:in `instance_exec'
+    vendor/rails/actionpack/lib/action_view/helpers/prototype_helper.rb:587:in `initialize'
+    vendor/rails/actionpack/lib/action_view/helpers/capture_helper.rb:129:in `with_output_buffer'
+    vendor/rails/actionpack/lib/action_view/helpers/prototype_helper.rb:586:in `initialize'
+    vendor/rails/actionpack/lib/action_view/helpers/prototype_helper.rb:1038:in `new'
+    vendor/rails/actionpack/lib/action_view/helpers/prototype_helper.rb:1038:in `update_page'
+    app/views/store/index.js.rjs:1
+    vendor/rails/actionpack/lib/action_view/renderable.rb:39:in `send'
+    vendor/rails/actionpack/lib/action_view/renderable.rb:39:in `render'
+    vendor/rails/actionpack/lib/action_view/template.rb:73:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:256:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1177:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:905:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    app/controllers/store_controller.rb:68:in `sort'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:134:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:392:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:125:in `debug_load'
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:125:in `debug_program'
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:412
+    /var/lib/gems/1.8/bin/rdebug:19:in `load'
+    /var/lib/gems/1.8/bin/rdebug:19
+
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace (58.8ms)
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response (0.8ms)
+Rendering /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:35:42) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.3ms)
+
+
+ActionView::TemplateError (Missing template store/_store.erb in view path /home/ndhar/Documents/jrails-tut/app/views:) on line #7 of app/views/store/index.html.erb:
+4: 
+5: <div id="stores">
+6:   <%= render :partial => "sort" %>
+7:   <%= render :partial => "store" %>
+8: </div>
+9: 
+10: <% unless flash[:notice].blank? %>
+
+    vendor/rails/actionpack/lib/action_view/template.rb:95:in `find_full_path'
+    vendor/rails/actionpack/lib/action_view/template.rb:16:in `initialize'
+    vendor/rails/actionpack/lib/action_view/base.rb:334:in `new'
+    vendor/rails/actionpack/lib/action_view/base.rb:334:in `_unmemoized__pick_template'
+    vendor/rails/activesupport/lib/active_support/memoizable.rb:70:in `_pick_template'
+    vendor/rails/actionpack/lib/action_view/partials.rb:199:in `_unmemoized__pick_partial_template'
+    vendor/rails/activesupport/lib/active_support/memoizable.rb:70:in `_pick_partial_template'
+    vendor/rails/actionpack/lib/action_view/partials.rb:152:in `render_partial'
+    vendor/rails/actionpack/lib/action_view/base.rb:258:in `render'
+    app/views/store/index.html.erb:7
+    vendor/rails/actionpack/lib/action_view/renderable.rb:39:in `send'
+    vendor/rails/actionpack/lib/action_view/renderable.rb:39:in `render'
+    vendor/rails/actionpack/lib/action_view/template.rb:73:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:256:in `render'
+    vendor/rails/actionpack/lib/action_view/base.rb:369:in `_render_with_layout'
+    vendor/rails/actionpack/lib/action_view/base.rb:254:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1177:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:905:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:135:in `send'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:135:in `custom'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:164:in `call'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:164:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:158:in `each'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:158:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/store_controller.rb:7:in `index'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:134:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:392:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:125:in `debug_load'
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:125:in `debug_program'
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:412
+    /var/lib/gems/1.8/bin/rdebug:19:in `load'
+    /var/lib/gems/1.8/bin/rdebug:19
+
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace (55.0ms)
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response (0.8ms)
+Rendering /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:36:36) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.6ms)
+Rendered store/_stores (12.1ms)
+Completed in 35ms (View: 24, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:36:38) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering store/index
+Rendered store/_stores (12.3ms)
+Completed in 3800ms (View: 3790, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:37:27) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.3ms)
+Rendered store/_stores (19.0ms)
+Completed in 4041ms (View: 38, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:37:35) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering store/index
+Rendered store/_stores (25.9ms)
+Completed in 4533ms (View: 4523, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-08 18:38:48) [GET]
+
+
+SyntaxError (/home/ndhar/Documents/jrails-tut/app/controllers/store_controller.rb:68: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+    redirect_to_index, :object => @stores
+                                 ^):
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:382:in `load_without_new_constant_marking'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:382:in `load_file'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:381:in `load_file'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:256:in `require_or_load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:427:in `load_missing_constant'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:77:in `const_missing'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:89:in `const_missing'
+    /vendor/rails/activesupport/lib/active_support/inflector.rb:352:in `constantize'
+    /vendor/rails/activesupport/lib/active_support/inflector.rb:351:in `each'
+    /vendor/rails/activesupport/lib/active_support/inflector.rb:351:in `constantize'
+    /vendor/rails/activesupport/lib/active_support/core_ext/string/inflections.rb:162:in `constantize'
+    /vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:392:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /script/server:3
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:125:in `debug_load'
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:125:in `debug_program'
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:412
+    /var/lib/gems/1.8/bin/rdebug:19:in `load'
+    /var/lib/gems/1.8/bin/rdebug:19
+
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace (38.6ms)
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response (0.8ms)
+Rendering /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:39:27) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (7.6ms)
+Rendered store/_stores (12.5ms)
+Completed in 3855ms (View: 37, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:39:39) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+
+
+NoMethodError (undefined method `redirect_to_index' for #<StoreController:0xb6478b1c>):
+    /app/controllers/store_controller.rb:68:in `sort'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:134:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:392:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /script/server:3
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:125:in `debug_load'
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:125:in `debug_program'
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:412
+    /var/lib/gems/1.8/bin/rdebug:19:in `load'
+    /var/lib/gems/1.8/bin/rdebug:19
+
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace (39.8ms)
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response (0.8ms)
+Rendering /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:40:03) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+
+
+NameError (undefined local variable or method `redirect_to_index' for #<StoreController:0xb634cd60>):
+    /app/controllers/store_controller.rb:68:in `sort'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:134:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:392:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /script/server:3
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:125:in `debug_load'
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:125:in `debug_program'
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:412
+    /var/lib/gems/1.8/bin/rdebug:19:in `load'
+    /var/lib/gems/1.8/bin/rdebug:19
+
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace (41.7ms)
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response (0.8ms)
+Rendering /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:40:09) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+
+
+NameError (undefined local variable or method `redirect_to_index' for #<StoreController:0xb65f95b8>):
+    /app/controllers/store_controller.rb:68:in `sort'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:134:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:392:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /script/server:3
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:125:in `debug_load'
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:125:in `debug_program'
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:412
+    /var/lib/gems/1.8/bin/rdebug:19:in `load'
+    /var/lib/gems/1.8/bin/rdebug:19
+
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace (39.7ms)
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response (0.8ms)
+Rendering /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:40:14) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.8ms)
+Rendered store/_stores (13.2ms)
+Completed in 2388ms (View: 34, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:40:20) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+
+
+NameError (undefined local variable or method `redirect_to_index' for #<StoreController:0xb63aabcc>):
+    /app/controllers/store_controller.rb:68:in `sort'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:134:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:392:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /script/server:3
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:125:in `debug_load'
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:125:in `debug_program'
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:412
+    /var/lib/gems/1.8/bin/rdebug:19:in `load'
+    /var/lib/gems/1.8/bin/rdebug:19
+
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace (42.4ms)
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response (0.8ms)
+Rendering /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:40:57) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.8ms)
+Rendered store/_stores (12.5ms)
+Completed in 5619ms (View: 33, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:41:10) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Redirected to object#<Store:0xb650f4e0>#<Store:0xb650ec84>#<Store:0xb650ec34>#<Store:0xb650ebe4>#<Store:0xb650eb94>#<Store:0xb650eb44>#<Store:0xb650eaf4>#<Store:0xb650eaa4>#<Store:0xb650ea54>#<Store:0xb650ea04>actionindex
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/store/sort]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:41:10) [GET]
+  Parameters: {"object"=>["24", "9", "4", "17", "14", "19", "7", "11", "5", "15"]}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (21.4ms)
+Rendered store/_stores (13.3ms)
+Completed in 37030ms (View: 50, DB: 1) | 200 OK [http://localhost/store?object%5B%5D=24&object%5B%5D=9&object%5B%5D=4&object%5B%5D=17&object%5B%5D=14&object%5B%5D=19&object%5B%5D=7&object%5B%5D=11&object%5B%5D=5&object%5B%5D=15]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:41:57) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Redirected to object#<Store:0xb6365d4c>#<Store:0xb63649ec>#<Store:0xb6364550>#<Store:0xb636449c>#<Store:0xb6364384>#<Store:0xb63641a4>#<Store:0xb6363fc4>#<Store:0xb6363de4>#<Store:0xb6363ba0>#<Store:0xb6363808>actionindex
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/store/sort]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:41:57) [GET]
+  Parameters: {"object"=>["24", "9", "4", "17", "14", "19", "7", "11", "5", "15"]}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (22.8ms)
+Rendered store/_stores (57.9ms)
+Completed in 2221ms (View: 96, DB: 1) | 200 OK [http://localhost/store?object%5B%5D=24&object%5B%5D=9&object%5B%5D=4&object%5B%5D=17&object%5B%5D=14&object%5B%5D=19&object%5B%5D=7&object%5B%5D=11&object%5B%5D=5&object%5B%5D=15]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:42:32) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (7.8ms)
+Rendered store/_stores (13.5ms)
+Completed in 2345ms (View: 39, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:42:39) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering store/index
+Rendered store/_stores (19.7ms)
+Completed in 7461ms (View: 7452, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:43:19) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (7.5ms)
+Rendered store/_stores (12.8ms)
+Completed in 2274ms (View: 38, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:43:25) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering store/index
+Rendered store/_stores (25.8ms)
+Completed in 1515ms (View: 1506, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:44:56) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.4ms)
+Rendered store/_stores (13.0ms)
+Completed in 3533ms (View: 34, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:45:03) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering store/index
+Rendered store/_stores (16.2ms)
+Completed in 3132ms (View: 3123, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:45:12) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.8ms)
+Rendered store/_stores (12.1ms)
+Completed in 21283ms (View: 31, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:46:33) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.7ms)
+Rendered store/_stores (23.0ms)
+Completed in 1805ms (View: 38, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:46:38) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering store/sort
+Rendered store/_stores (43.4ms)
+Completed in 21098ms (View: 21088, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:47:17) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (9.4ms)
+Rendered store/_stores (11.9ms)
+Completed in 1838ms (View: 37, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:47:23) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering store/sort
+Rendered store/_stores (17.6ms)
+Completed in 128689ms (View: 128679, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:51:03) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:51:40) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (7.7ms)
+Rendered store/_stores (12.7ms)
+Completed in 38ms (View: 27, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:51:42) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (6.2ms)
+Rendered store/_stores (12.0ms)
+Completed in 36ms (View: 25, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:52:10) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.8ms)
+Rendered store/_stores (12.1ms)
+Completed in 37ms (View: 25, DB: 3) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:52:12) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (8.4ms)
+Rendered store/_stores (11.9ms)
+Completed in 36ms (View: 26, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:52:14) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"DESC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name DESC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (6.9ms)
+Rendered store/_stores (11.8ms)
+Completed in 35ms (View: 25, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:52:19) [GET]
+  Parameters: {"order"=>"DESC", "page"=>"2", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.5ms)[0m   [0mSELECT * FROM `stores` ORDER BY name DESC LIMIT 10, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (7.8ms)
+Rendered store/_stores (11.9ms)
+Completed in 37ms (View: 26, DB: 1) | 200 OK [http://localhost/store/sort?order=DESC&page=2&sort=name]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:54:01) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.7ms)
+Rendered store/_stores (12.5ms)
+Completed in 35ms (View: 25, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:54:03) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (6.3ms)
+Rendered store/_stores (11.8ms)
+Completed in 33ms (View: 24, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:54:07) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.6ms)
+Rendered store/_stores (12.7ms)
+Completed in 38ms (View: 26, DB: 3) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:54:09) [GET]
+  Parameters: {"page"=>"2"}
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 10, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (6.6ms)
+Rendered store/_stores (12.2ms)
+Completed in 35ms (View: 25, DB: 2) | 200 OK [http://localhost/store?page=2]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:54:10) [GET]
+  Parameters: {"page"=>"1"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.8ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.4ms)
+Rendered store/_stores (12.0ms)
+Completed in 35ms (View: 24, DB: 2) | 200 OK [http://localhost/store?page=1]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:54:13) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (7.1ms)
+Rendered store/_stores (14.7ms)
+Completed in 38ms (View: 28, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:54:14) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (7.3ms)
+Rendered store/_stores (58.0ms)
+Completed in 82ms (View: 72, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:54:16) [GET]
+  Parameters: {"order"=>"ASC", "page"=>"2", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 10, 10[0m
+  [4;36;1mStore Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (8.4ms)
+Rendered store/_stores (11.9ms)
+Completed in 38ms (View: 26, DB: 2) | 200 OK [http://localhost/store/sort?order=ASC&page=2&sort=name]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:54:36) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.5ms)
+Rendered store/_stores (12.1ms)
+Completed in 35ms (View: 24, DB: 1) | 200 OK [http://localhost/store/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:55:29) [GET]
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (6.3ms)
+Rendered store/_stores (12.1ms)
+Completed in 35ms (View: 25, DB: 2) | 200 OK [http://localhost/store/]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:55:31) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (6.1ms)
+Rendered store/_stores (11.9ms)
+Completed in 33ms (View: 24, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:55:31) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"DESC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name DESC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (6.4ms)
+Rendered store/_stores (11.9ms)
+Completed in 36ms (View: 27, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:55:33) [GET]
+  Parameters: {"order"=>"DESC", "page"=>"2", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name DESC LIMIT 10, 10[0m
+  [4;36;1mStore Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (7.9ms)
+Rendered store/_stores (12.3ms)
+Completed in 36ms (View: 26, DB: 1) | 200 OK [http://localhost/store/sort?order=DESC&page=2&sort=name]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:55:41) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.7ms)
+Rendered store/_stores (12.9ms)
+Completed in 83ms (View: 73, DB: 1) | 200 OK [http://localhost/store/]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:55:43) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (6.3ms)
+Rendered store/_stores (12.0ms)
+Completed in 34ms (View: 24, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:55:46) [GET]
+  Parameters: {"order"=>"ASC", "page"=>"2", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 10, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (7.9ms)
+Rendered store/_stores (12.2ms)
+Completed in 36ms (View: 26, DB: 1) | 200 OK [http://localhost/store/sort?order=ASC&page=2&sort=name]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:55:49) [GET]
+  Parameters: {"order"=>"ASC", "page"=>"3", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 20, 10[0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (7.0ms)
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+Rendered store/_stores (4.3ms)
+Completed in 25ms (View: 17, DB: 0) | 200 OK [http://localhost/store/sort?order=ASC&page=3&sort=name]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:55:50) [GET]
+  Parameters: {"order"=>"ASC", "page"=>"1", "sort"=>"name"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.7ms)[0m   [0;1mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (6.3ms)
+Rendered store/_stores (11.9ms)
+Completed in 35ms (View: 25, DB: 1) | 200 OK [http://localhost/store/sort?order=ASC&page=1&sort=name]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:55:53) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"DESC", "sort"=>"name"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` ORDER BY name DESC LIMIT 0, 10[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (6.2ms)
+Rendered store/_stores (11.9ms)
+Completed in 33ms (View: 24, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:55:55) [GET]
+  Parameters: {"order"=>"DESC", "page"=>"2", "sort"=>"name"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` ORDER BY name DESC LIMIT 10, 10[0m
+  [4;35;1mStore Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (7.9ms)
+Rendered store/_stores (12.8ms)
+Completed in 36ms (View: 27, DB: 1) | 200 OK [http://localhost/store/sort?order=DESC&page=2&sort=name]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:55:56) [GET]
+  Parameters: {"order"=>"DESC", "page"=>"3", "sort"=>"name"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM `stores` ORDER BY name DESC LIMIT 20, 10[0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (60.4ms)
+  [4;35;1mStore Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+Rendered store/_stores (5.1ms)
+Completed in 80ms (View: 73, DB: 0) | 200 OK [http://localhost/store/sort?order=DESC&page=3&sort=name]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:57:58) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.5ms)
+Rendered store/_stores (12.1ms)
+Completed in 34ms (View: 24, DB: 1) | 200 OK [http://localhost/store/]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:58:00) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering store/sort
+Rendered store/_stores (12.0ms)
+Completed in 26ms (View: 17, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:59:22) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.4ms)
+Rendered store/_stores (12.2ms)
+Completed in 34ms (View: 24, DB: 1) | 200 OK [http://localhost/store/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:59:30) [GET]
+  Parameters: {"page"=>"2"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 10, 10[0m
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (6.3ms)
+Rendered store/_stores (11.8ms)
+Completed in 34ms (View: 25, DB: 1) | 200 OK [http://localhost/store?page=2]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 18:59:33) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.7ms)
+Rendered store/_stores (12.4ms)
+Completed in 35ms (View: 25, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 18:59:34) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering store/sort
+Rendered store/_stores (25.8ms)
+Completed in 1342220ms (View: 37, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 19:22:00) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.9ms)
+Rendered store/_stores (19.3ms)
+Completed in 42ms (View: 32, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 19:22:02) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering store/sort
+Rendered store/_stores (12.0ms)
+Completed in 1786ms (View: 18, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 19:22:12) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.4ms)
+Rendered store/_stores (12.3ms)
+Completed in 34ms (View: 25, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 19:22:41) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.5ms)
+Rendered store/_stores (12.4ms)
+Completed in 34ms (View: 25, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 19:22:42) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering store/sort
+Rendered store/_stores (16.6ms)
+Completed in 2172ms (View: 29, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 19:24:07) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (9.3ms)
+Rendered store/_stores (11.7ms)
+Completed in 37ms (View: 28, DB: 1) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 19:24:09) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (54.8ms)
+Rendered store/_stores (12.7ms)
+Completed in 2265ms (View: 82, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 19:24:36) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"DESC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM `stores` ORDER BY name DESC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (6.3ms)
+Rendered store/_stores (13.5ms)
+Completed in 2038ms (View: 33, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 19:24:44) [GET]
+  Parameters: {"order"=>"DESC", "page"=>"2", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name DESC LIMIT 10, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (15.3ms)
+Rendered store/_stores (13.5ms)
+Completed in 2681ms (View: 43, DB: 1) | 200 OK [http://localhost/store/sort?order=DESC&page=2&sort=name]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 19:25:15) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.4ms)
+Rendered store/_stores (12.2ms)
+Completed in 35ms (View: 25, DB: 1) | 200 OK [http://localhost/store/]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 19:25:18) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+
+
+ActionController::RenderError (You called render with invalid options : :sort):
+    /vendor/rails/actionpack/lib/action_controller/base.rb:875:in `render_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /app/controllers/store_controller.rb:66:in `sort'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:135:in `call'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:135:in `custom'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:160:in `call'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:160:in `respond'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:158:in `each'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:158:in `respond'
+    /vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    /app/controllers/store_controller.rb:65:in `sort'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:134:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:392:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /var/lib/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:142:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /script/server:3
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:125:in `debug_load'
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:125:in `debug_program'
+    /var/lib/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug:412
+    /var/lib/gems/1.8/bin/rdebug:19:in `load'
+    /var/lib/gems/1.8/bin/rdebug:19
+
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace (67.5ms)
+Rendered /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response (0.8ms)
+Rendering /home/ndhar/Documents/jrails-tut/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-08-08 19:25:53) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_sort (5.3ms)
+Rendered store/_stores (12.2ms)
+Completed in 34ms (View: 24, DB: 1) | 200 OK [http://localhost/store/]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 19:25:56) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"ASC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name ASC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (11.3ms)
+Rendered store/_stores (13.1ms)
+Completed in 1789ms (View: 39, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 19:26:00) [POST]
+  Parameters: {"authenticity_token"=>"970ef5c4b4e84cd56e0b0a1b01ef8a9560958bf3", "order"=>"DESC", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM `stores` ORDER BY name DESC LIMIT 0, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (14.7ms)
+Rendered store/_stores (28.4ms)
+Completed in 1497ms (View: 57, DB: 1) | 200 OK [http://localhost/store/sort]
+
+
+Processing StoreController#sort (for 127.0.0.1 at 2010-08-08 19:26:08) [GET]
+  Parameters: {"order"=>"DESC", "page"=>"2", "sort"=>"name"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM `stores` ORDER BY name DESC LIMIT 10, 10[0m
+  [4;36;1mStore Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `stores` [0m
+Rendering template within layouts/store
+Rendering store/sort
+Rendered store/_sort (8.5ms)
+Rendered store/_stores (12.4ms)
+Completed in 3718ms (View: 34, DB: 1) | 200 OK [http://localhost/store/sort?order=DESC&page=2&sort=name]

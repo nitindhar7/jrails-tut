@@ -2,11 +2,6 @@ class StoreController < ApplicationController
   
   def index
     @stores = Store.paginate(:page => params[:page] || 1, :per_page => 10)
-    
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
   
   def new
@@ -63,8 +58,14 @@ class StoreController < ApplicationController
     @page  = params[:page] || 1
     
     @stores = Store.paginate(:page => @page, :order => "#{@sort} #{@order}", :per_page => 10)
+    #render :action => "index"
+    #page.replace_html("rows", :partial => "stores" , :object => @stores)
     
-    render :action => "index"
+    debugger
+    respond_to do |format|
+      format.html {render :action => "sort"}
+      format.js {render :js => @stores.to_js}
+    end
   end
 
 end

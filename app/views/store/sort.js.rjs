@@ -1,1 +1,1 @@
-page.replace_html("rows" , :partial => "store" , :object => @stores)
+page.replace_html("rows", :partial => "stores" , :object => @stores)
