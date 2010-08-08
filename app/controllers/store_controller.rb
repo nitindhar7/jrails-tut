@@ -1,14 +1,7 @@
 class StoreController < ApplicationController
   
   def index
-    @sort  = params[:sort]
-    @order = params[:order]
-    
-    if @sort.blank?
-      @stores = Store.find(:all)
-    else
-      @stores = Store.find(:all, :order => "#{@sort} #{@order}") 
-    end
+    @stores = Store.paginate(:page => params[:page] || 1, :per_page => 10)
   end
   
   def new
@@ -16,11 +9,7 @@ class StoreController < ApplicationController
   end
   
   def create
-    @store = Store.new()
-    @store.name = params[:store][:name]
-    @store.city = params[:store][:city]
-    @store.created_at = Time.new.strftime("%Y-%m-%d %H:%M:%S")
-    @store.updated_at = Time.new.strftime("%Y-%m-%d %H:%M:%S")
+    @store = Store.new(params[:store])
     
     if @store.save
       flash[:notice] = "Successfully created store"
@@ -43,7 +32,6 @@ class StoreController < ApplicationController
     @store = Store.find(params[:id])
     @store.name = params[:store][:name]
     @store.city = params[:store][:city]
-    @store.updated_at = Time.new.strftime("%Y-%m-%d %H:%M:%S")
     
     if @store.save
       flash[:notice] = "Successfully updated store"

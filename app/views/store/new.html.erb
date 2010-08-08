@@ -4,7 +4,7 @@
 <div class="error"><%= flash[:error] %></div>
 <% end %>
 
-<% form_for :store, @store, :url => {:action => "create"}, :html => {:id => "store_form"} do |f| %>
+<% form_for :store, :url => {:action => "create"}, :html => {:id => "store_form"} do |f| %>
   <%= label_tag(:store_name, "Store Name", :class => "label") %>
   <%= f.text_field :name, :class => "field" %>
   <%= label_tag(:store_city, "Store City", :class => "label") %>

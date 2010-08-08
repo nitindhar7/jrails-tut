@@ -4,15 +4,7 @@
 
 <div id="stores">
   <%= render :partial => "sort" %>
-  <% @stores.each do |store| %>
-  <div class="store">
-    <div class="data"><%= store.name %></div>
-    <div class="data"><%= store.city %></div>
-    <div class="button"><%= link_to "Show", :controller => "store", :action => "show", :id => store.id %></div>
-    <div class="button"><%= link_to "Edit", :controller => "store", :action => "edit", :id => store.id %></div>
-    <div class="button"><%= link_to "Delete", :controller => "store", :action => "destroy", :id => store.id %></div>
-  </div>
-  <% end %>
+  <%= render :partial => "store" %>
 </div>
 
 <% unless flash[:notice].blank? %>

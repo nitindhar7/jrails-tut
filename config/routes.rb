@@ -1,12 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   # Regular routes:
-  map.connect 'store/new', :controller => 'store', :action => 'new'
-  map.connect 'store/create', :controller => 'store', :action => 'create'
-  map.connect 'store/show/:id', :controller => 'store', :action => 'show'
-  map.connect 'store/edit/:id', :controller => 'store', :action => 'edit'
-  map.connect 'store/update/:id', :controller => 'store', :action => 'update'
-  map.connect 'store/destroy/:id', :controller => 'store', :action => 'destroy'
-  map.connect 'store/sort', :controller => 'store', :action => 'sort'
+  
 
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
@@ -34,7 +28,12 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # Root route
-  map.root :controller => "store"
+  # map.root :controller => "welcome"
 
   # See how all your routes lay out with "rake routes"
+  
+  # Default routes
+  map.connect ':controller/:action'
+  map.connect ':controller/:action/:id'
+  map.connect ':controller/:action/:id.:format'
 end
