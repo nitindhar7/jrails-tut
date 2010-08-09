@@ -76,17 +76,11 @@ to the ':with' parameter for the link_to_remote tag. This will pass the @order v
 to a custom helper method called `sort_order`. Sort order checks if order was previously set (`!order.blank?`) and if order is ascending
 
 `def sort_order(order)`
-
 `  if !order.blank? && order == 'ASC'`
-
 `    'DESC'`
-
 `  else`
-
 `    'ASC'`
-
 `  end`
-
 `end`
 
 The result of this is that if the order was already set and it was ASCENDING, the new order will become DESCENDING. If either the order
@@ -116,3 +110,18 @@ a small portion if the total set is returned making the interface feel much quic
 [Facebook photo's app](http://blog.facebook.com/blog.php?post=2406207130) without pagination. All those images would need to be loaded on the same page.
 The effect is not just on the load times but usability. Its much harder for the human eye to follow along such a large grid.
 
+To allow sort and pagination ajax-style, we need the pager links to be remote links also. By default, these links are regular GET
+links. One way of doing this is to override the `page_link_or_span` method of the LinkRenderer class of will_paginate. This class builds the links
+for the pager and is the location for methods that determine how the link will behave when clicked on.
+
+The link renderer code will reside in the helper class in app/helpers. When calling will_paginate, adding these attributes converts the links to remote
+links:
+
+`:renderer => 'RemoteLinkRenderer'`
+
+and
+
+`:remote => {:with => "'param1=value&param2=value'", :update => "div_to_update"}`
+
+When these links are clicked, a remote request is sent to the sort action which retrieves the parameters and uses them to retrieve records for the
+requested page in the order asked for.
