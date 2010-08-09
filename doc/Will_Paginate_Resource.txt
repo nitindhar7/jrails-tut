@@ -1,0 +1,493 @@
+HomeProductsServicesContact UsLabsWeblog
+Categories
+59Home
+8Plugins
+1Screencasts
+13General
+30Redzone Leagues
+24Ruby on Rails
+11Labs
+17Features
+1Case Studies
+Search
+  
+
+
+will_paginate and remote AJAX links
+
+January 30th, 2008
+
+Posted by andrew
+Updated for will_paginate 2.3.x
+
+So you’re using the will_paginate plugin and want to use remote AJAX links. You’re not using the will_paginate plugin? Simply install it with…
+
+script/plugin install git://github.com/mislav/will_paginate.git
+or install the gem and specify it in your config/environment.rb file
+
+sudo gem install mislav-will_paginate
+
+config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
+will_paginate is an alternative to the classic_pagination plugin, which is the pagination plugin that basically took the pre Rails 2.0 pagination implementation and packaged it in plugin form. I won’t discuss the differences between the two plugins here, but there’s a good video explaining the two from Railscasts here.
+Out of the box, will_paginate doesn’t allow remote AJAX links for page links, so I’ll show you an easy way to add such functionality…
+
+I’ve read a number of blogs that seem to go a bit overboard in order to implement remote links, but will_paginate allows you to customize the links quite nicely already.
+
+By default will_paginate uses the WillPaginate::LinkRender class to render links. So lets use this is a base and add to it. We can derive from this class and add our own functionality.
+
+# app/helpers/remote_link_renderer.rb
+
+class RemoteLinkRenderer < WillPaginate::LinkRenderer
+  def initialize(collection, options, template)
+    @remote = options.delete(:remote)
+    super
+  end
+
+  def page_link_or_span(page, span_class = 'current', text = nil)
+    text ||= page.to_s
+    if page and page != current_page
+      @template.link_to_remote(text, {:url => url_options(page), :method => :get}.merge(@remote))
+    else
+      @template.content_tag :span, text, :class => span_class
+    end
+  end
+end
+All I’m doing is creating a subclass to the existing renderer and overriding the page_link_or_span method that makes the link_to method call and replacing it with a call to link_to_remote (I also added the :method => :get option to work with my restful code).
+
+So how do we use this? One of two ways.
+
+Use the :renderer and :remote(optional) option on will_paginate. The :remote option takes any options that link_to_remote does, so refer to the rails docs for allowable options. The :with and :update options are simply being used to show example usage.
+<%= will_paginate @collection, :renderer => 'RemoteLinkRenderer' , :remote => {:with => ’value’, :update => ‘some_div’} %>
+or set the default renderer in config/environment.rb
+WillPaginate::ViewHelpers.pagination_options[:renderer] = 'RemoteLinkRenderer'
+and use it without the :renderer option.
+<%= will_paginate @collection, :remote => {:with => ’value’, :update => ‘some_div’} %>
+That’s all there is to it. You could get fancier when creating your LinkRenderer class to allow for additional customization, but this is a good start.
+
+Update for will_paginate 2.3.x
+This is even more concise in the new version.
+
+# app/helpers/remote_link_renderer.rb
+
+class RemoteLinkRenderer < WillPaginate::LinkRenderer
+  def prepare(collection, options, template)
+    @remote = options.delete(:remote) || {}
+    super
+  end
+
+protected
+  def page_link(page, text, attributes = {})
+    @template.link_to_remote(text, {:url => url_for(page), :method => :get}.merge(@remote), attributes)
+  end
+end
+The usage remains the same as above.
+
+To use the new version, see the Installation section at http://github.com/mislav/will_paginate/tree/master
+
+41 Responses Follows
+
+Laszlo Ordogh says
+on February 1st, 2008 at 03:12 AM
+Hi Andrew,
+
+First I would like to thank you for publishing your solution.
+
+But I have a question and maybe you can answer:
+
+I would like to pass :with and :update parameters to link_to_remote method (in your page_link_or_span) from will_paginate. I modified your code:
+
+@template.link_to_remote text, :url => url_options(page), :method => :get, :with=>@options[:with], :update=>@options[:update]
+
+This works but it also renders with and update as html attributes for the pagination div:
+
+What is the correct way to pass these parameters from will_paginate?
+
+Thanks in advance,
+
+Laszlo
+
+Andrew Kaspick says
+on February 2nd, 2008 at 01:13 PM
+This should work…
+
+
+class RemoteLinkRenderer < WillPaginate::LinkRenderer
+  def initialize(collection, options, template)
+    @remote = options.delete(:remote)
+    super
+  end
+
+  def page_link_or_span(page, span_class = ‘current’, text = nil)
+    text ||= page.to_s
+    if page and page != current_page
+      @template.link_to_remote(text, {:url => url_options(page), :method => :get}.merge(@remote)) 
+    else
+      @template.content_tag :span, text, :class => span_class
+    end
+  end
+end
+
+# Use it like so…
+will_paginate :collection, :remote => {:with => ’value’, :update => ‘some_div’}
+Laszlo Ordogh says
+on February 3rd, 2008 at 10:02 AM
+I tried it. It works!
+
+Thank you very much!
+
+Laszlo
+
+Andrew Kaspick says
+on February 6th, 2008 at 06:26 PM
+That @remote assignment should probably be this instead…
+
+
+@remote = options.delete(:remote) || {}
+You don’t want @remote being nil.
+
+Ken Schroeder says
+on February 27th, 2008 at 09:57 PM
+Thanks for this post! This method is much better than some of the other enhancements I’ve tried to use for will_paginate. It does remote links without hacking the will_paginate library itself and plays nicely with multiple paginate blocks on a page.
+
+Erol Fornoles says
+on March 11th, 2008 at 09:50 PM
+Very nice work!
+
+I suggest doing the below changes to avoid having the remote pagination links pass the authenticity token twice (since the Rails 2.0 link_to_remote adds it by default already)
+
+text, :url => url_options(page), :method => :get[/code]
+To this:
+
+text, :url => url_options(page).except(:authenticity_token), :method => :get[/code]
+TheBlatherskite says
+on March 22nd, 2008 at 10:51 PM
+Thanks! I had halfway implemented a few clunky and brute force attempts to inject link_to_remote functionality into will_paginate, but I had to wipe the slate clean for this. Much cleaner!
+
+Just a quick note: I riffed on Andrew’s extension, above, to be able to easily specify remote url options.
+
+class RemoteLinkRenderer < WillPaginate::LinkRenderer def initialize(collection, options, template) @url = options.delete(:url) || {} super end def page_link_or_span(page, span_class = 'current', text = nil) text ||= page.to_s if page and page != current_page url_opts = url_options(page).except(:authenticity_token).merge(@url) @template.link_to_remote(text, {:url => url_opts, :method => :get}) else @template.content_tag :span, text, :class => span_class end end end
+Barnaba says
+on April 11th, 2008 at 10:23 AM
+Thanks so far. But it’s not working for me. I get this error:
+
+undefined method `url_options’ for #<remotelinkrenderer:0xb670e688>
+
+I used the first simpler code together with :renderer => ‘RemoteLinkRenderer’. Then I call an action on same controller via link_to_remote wich renders the pagination template, but the error occurs before the template gets rendered.
+
+What’s the deal with url_options?
+
+Andrew Kaspick says
+on April 12th, 2008 at 05:23 PM
+url_options is from an older version of will_paginate. It looks like url_for is the method that has replaced it.
+
+Try using url_for instead, but the new version of will_paginate may have some other issues with the example posted here, so modify the example as needed to whatever version of will_paginate you’re using.
+
+Mike says
+on April 16th, 2008 at 06:55 PM
+I just placed that second helper code into my helpers, but how do I do something similiar to link_to_remote’s :url => {:action => ‘someaction’, :someparam => ‘value’}
+
+sijo says
+on April 23rd, 2008 at 04:13 AM
+Same question above repeating How can I specify :controller =>‘somecontroller’,:action,:action => ‘someaction’, :someparam => ‘value’ with will_paginate :collection, :remote => {:with => ’value’, :update => ‘some_div’}
+
+Joel says
+on May 4th, 2008 at 06:17 AM
+Hello,
+
+thank you for this ajax solution. Works very well … :-)
+
+However, my page number links are not being updated. Do you know from where may come this problem. Also do you have a hint on how I can customize the number links in order to use image buttons instead of page text numbers.
+
+Regards,
+
+Joel
+
+Andrew Kaspick says
+on May 5th, 2008 at 12:51 AM
+@Joel
+
+Modify the link_to_remote and content_tag calls to use images(image_tag) instead of just the text variable in the example.
+
+If you want to keep a text version around, keep the RemoteLinkRenderer class and simply create another descendent of the LinkRenderer class called ImageLinkRenderer or something along those lines and modify the example in my post as needed.
+
+Hope that helps.
+
+joel says
+on May 7th, 2008 at 06:08 PM
+Hello,
+
+thank you very much. I finally got this done quite easily. But how about the links not being updated. The remote ajax call would only update the specified div, and unfortunately not the page number links ( as they are outside the target div ).
+
+Regards,
+
+Joel
+
+Andrew Kaspick says
+on May 8th, 2008 at 02:42 PM
+Include the pagination as part of the content of the target div. Your target content gets updated and so do your links.
+
+jim says
+on May 11th, 2008 at 02:16 AM
+Well done, Andrew! I added the helper and made the change to environment and it worked first try!
+
+What’s the way to prevent my URL from having the ?page=... appended on it? Been pulling my hair out tonight trying to remember, and Googling all over the place. That change to my URL trips up my filtering method.
+
+Andrew Kaspick says
+on May 12th, 2008 at 01:57 PM
+@jim
+
+You can use routes to make the page number become part of the url instead of a parameter.
+
+ie. /forums/topics/1/1 vs. /forums/topics/1?page=1
+
+The following is what I have used before…
+
+map.connect 'forums/topics/:id/:page', :controller => 'forums', :action => 'topics', :requirements => {:page => /\d+/}, :page => nil, :id => /\d+/
+Peter DP says
+on May 29th, 2008 at 02:47 PM
+Thank you everyone for your solutions and comments. This solution was elegant and, most importantly, successful.
+
+My application has a page with a top level filter (page refresh) and within that a dynamically created second (ajax) and (onchange of the second level) a dynamically created third-level filter. Each filter refreshes a list, which is paginated. I need to pass a block of parameters back, which I did by putting them into a hash and passing the hash in to will_paginate with the :params option.
+
+The .except(:authenticity_token) code threw an exception (Rails 2.0.2), so I pulled out that bit.
+
+jim says
+on May 30th, 2008 at 08:41 PM
+@Andrew
+
+Thanks for the routes idea. Could you walk me through how that’s interpreted? I had suspected you were going to key off the question mark, but that doesn’t appear to be an obvious part of your solution. I ask because I’m trying to update the tutorial at http://dev.nozav.org/rails_ajax_table.html to use a) Rails 2.0.2 and b) will_paginate. The url comes back with a sort parameter and a page parameter and I need to parse those out, I think.
+
+nanda says
+on June 4th, 2008 at 04:03 PM
+quick question, how do i pass some params to the link_to_remote for the pagination links?
+
+Andrew Kaspick says
+on June 5th, 2008 at 03:17 AM
+See comment #2 and #4 on how to pass additional params.
+
+jim says
+on June 10th, 2008 at 06:19 PM
+Okay, I solved my problem without needing to work on special routes. I’ll see if I can post an updated tutorial somewhere.
+
+Kiran Achyutuni says
+on June 13th, 2008 at 08:12 AM
+As noted in post #9, the original solution does not work for some versions of will_paginate. Here’s a solution for mislav-will_paginate-2.3.2 on rails-2.1.0. Instead of overriding the initialize method, override the prepare method of will_paginate. The reason being @options is not available in initialize until the prepare method.
+
+
+Usage:
+
+<%= will_paginate @yourcollection, :renderer =>'RemoteLinkRenderer', :params => {:remote => {:update => 'your_div_name'},:param1 => @blah1, :param2 => @blah2} %>
+
+Create this file: helpers/remote_link_renderer.rb
+
+class RemoteLinkRenderer < WillPaginate::LinkRenderer
+   def prepare(collection, options, template)
+      @collection = collection
+      @options    = options
+      @template   = template
+      # Added this one extra  line
+      @remote = @options[:params].delete(:remote) || {}
+
+      # reset values in case we're re-using this instance
+      @total_pages = @param_name = @url_string = nil
+    end
+
+  def page_link_or_span(page, span_class = 'current', text = nil)
+    text ||= page.to_s
+    if page and page != current_page
+      @template.link_to_remote(text, {:url => url_for(page), :method => :get}.merge(@remote))
+    else
+      @template.content_tag :span, text, :class => span_class
+    end
+  end
+end
+Joe Jammy says
+on June 26th, 2008 at 01:56 PM
+Hi, I’m trying to use this method and everything seems to be working, but the page doesnt get updated. In the log, all the calls are being made, EXACTLY as it is under non-ajax paginatation. regular pagination works (if i put ?page=3 at the end of the URL, it works)
+
+here is my code:
+
+(controller) /apps/controller/posts_controller.rb
+
+def show @post = Post.find(params[:id]) @photos = @post.photos.paginate(:all, :page => params[:page], :per_page => 10) end
+
+(view) /apps/view/posts/show.html.erb
+
+<= render :partial => ‘photos’, :object => @photos ->
+(partial) /apps/view/posts/_photos.html.erb
+
+<% @photos.each do |a| -%>
+<= image_tag(a.public_filename()) ->
+<= a.body ->
+
+<% end -%>
+<= will_paginate @photos, :renderer => ‘RemoteLinkRenderer’ ->
+
+(js files) <%= javascript_include_tag ‘prototype’ %> <%= javascript_include_tag ‘application’ %> <%= javascript_include_tag ‘effects’ %> <%= javascript_include_tag ‘controls’ %>
+
+(models)
+
+/app/models/posts
+
+has_many :photos
+
+/app/models/posts
+
+belongs_to :post
+
+(log)
+
+Processing PostsController#show (for 127.0.0.1 at 2008-06-26 14:46:59) [GET] Session ID: 123456789 Parameters: {“authenticity_token”=>”XXXX”, “action”=>”show”, “id”=>”3”, “controller”=>”dimpls”, “page”=>”2”} . . . Rendering: 0.67320 (77%) | DB: 0.06942 (7%) | 200 OK [http://0.0.0.0/posts/3?page=2&authenticity_token=XXXX
+
+This has been killing me since yesterday. I cannot figure out what is wrong. Everything in the log checks out fine. I checked with firebug, and the partial is simply not being rendered. If anyone can please help, I will be forever grateful. Thanks!
+
+Andrew Kaspick says
+on June 27th, 2008 at 01:01 AM
+I’ve updated the article to use code that will work with the 2.3.x version of will_paginate.
+
+Thanks Kiran for pointing out the change. I simplified your example though in my newest update.
+
+Joe Jammy says
+on June 27th, 2008 at 07:56 AM
+Hi Andrew,
+
+Your update solved most of my problem. However, instead of replacing a partial, the entire HTML page is renders again on top of the existing one. i’m using 2.3.x with rails 2.0.2. Your first method worked for, but the second more concise one didnt – It just did regular pagination
+
+Andrew Kaspick says
+on June 27th, 2008 at 04:24 PM
+Sorry, there was a typo in my update. I’ve fixed it, url_options should have been url_for.
+
+jp says
+on July 29th, 2008 at 04:26 PM
+Hi,
+
+I appear to be having the same issue as Joe Jammy @ comment #24. I’m using mislav-will_paginate 2.3.2, rails 2.1.0 on a sqlite db, and using the updated helper code.
+
+Firebug is showing events, and the log appears to show that the pagination is doing what it should, but the pages are not updating and my partial stays on the results of what would be the first page.
+
+Would anyone be able to help me with this. I’ll spare the world the horrors of my code until some brave soul wishes to help :-)
+
+thanks in advance, and great blog.
+
+jp
+
+Andrew Kaspick says
+on July 30th, 2008 at 06:27 PM
+Your code should have this general style…
+
+Main view: index.html.erb
+
+<div id="container">
+  <%= render :partial => 'contents' %>
+</div>
+Partial view: _contents.html.erb
+
+<!-- content -->
+<%= will_paginate @collection, :renderer => 'RemoteLinkRenderer', :params => {:action => 'search', :search_terms => params[:search_terms]}, :remote => {:update => 'container'} %>
+Your controller action…
+
+def search
+  respond_to do |format|
+    format.html { render :partial => 'contents' }
+  end
+end
+This is just an example, so modify it as you see fit.
+
+Alexey says
+on August 28th, 2008 at 06:17 AM
+Hey great kick-ass tutorial for ajaxize will-paginate !!
+
+Thanks alot man !!
+
+Adam says
+on September 2nd, 2008 at 07:12 PM
+Is there a way to degrade gracefully to plain link behavior in the absence of JavaScript by setting something like….
+
+html_options[:href] to an alternate URL.
+
+???
+
+shirkavand says
+on September 7th, 2008 at 03:14 AM
+Hi,
+
+Very nice trick! I am having little trouble to make this code work on my site(i am noob in RoR). Maybe you can help e figure out what it is:
+
+I use your code this way into my view
+
+<%= will_paginate @products, :renderer => ‘RemoteLinkRenderer’ , :remote => {:update => “CatalogoProductos”} %>
+
+Now the prolem is that when i click over the will_paginate links it refresh the “CatalogoProductos” div, but put into it the whole page that i am workin with.
+
+Any idea why this is happening?
+
+regards
+
+Dave Smylie says
+on September 19th, 2008 at 12:38 PM
+Hi
+
+Shirkavand – if you’ve not already resolved your issue, I suspect it may be because you’ve copied the sample code above (using the list method) and not created a route (in routes.rb) to the list method.
+
+With out the list route, you’ll end up calling your method index which will send down an entire copy of the page, layout and all. (Which is why you see the whole page being inserted into that div).
+
+Cheers Dave Smylie
+
+Ricky says
+on September 23rd, 2008 at 03:35 PM
+very strange.I add the code as what you said.but I meets the error message:
+
+wrong number of arguments (0 for 3) Extracted source (around line #73): 70: 71: 72: 73: <%= will_paginate @items, :renderer => ‘RemoteLinkRenderer’ %> 74: 75: 76:
+
+could you help it for me?
+
+Mack says
+on September 24th, 2008 at 06:24 AM
+I have the same problem as shirkavand (#32) and #33 doesn’t help me. Anyone?
+
+mike says
+on September 24th, 2008 at 12:03 PM
+I just created a fork of mislav’s will_paginate repository on github that incorporates the ajax-enabling changes described on this site. Details at http://github.com/arius/will_paginate/tree/master (Scroll to the very bottom of the page to see an example of its implementation).
+
+Karl says
+on October 1st, 2008 at 09:05 AM
+Hi, I took the Update for will_paginate 2.3.x – it works really fine. Great thanks. Yet development.log shows a gread authenticity-monster for every query:
+
+[http://localhost/vico?ftquery=szienza&page=2&per_page=1&sform=pages&NaNf97589e614c496803e406c40e82befbb1b2e57f3&authenticity_token=f97589e614c496803e406c40e82befbb1b2e57f3&authenticity_token=f97589e614c496803e406c40e82befbb1b2e57f3&authenticity_token=f97589e614c496803e406c40e82befbb1b2e57f3&authenticity_token=f97589e614c496803e406c40e82befbb1b2e57f3&authenticity_token=f97589e614c496803e406c40e82befbb1b2e57f3&authenticity_token=f97589e614c496803e406c40e82befbb1b2e57f3&authenticity_token=f97589e614c496803e406c40e82befbb1b2e57f3&authenticity_token=f97589e614c496803e406c40e82befbb1b2e57f3&authenticity_token=f97589e614c496803e406c40e82befbb1b2e57f3&authenticity_token=f97589e614c496803e406c40e82befbb1b2e57f3]
+
+Any idea how to stop such monsters?
+
+regards
+
+Andrew Kaspick says
+on October 1st, 2008 at 10:26 AM
+@Karl
+
+Does comment #6 solve the issue?
+
+Karl says
+on October 2nd, 2008 at 08:43 AM
+Thanks, Andrew
+
+The idea of comment #6 is excellent. But Rails 2x doesn’t accept url_options(page) as noticed in comment #8 Following your hint in #9 I blindly tried url_for(page).except(:authenticity_token) and got another undefined method error for ‘except’ (although in the console I can let play ‘exept’ with hashes)
+
+Now with
+
+before_filter :protect_from_forgery, :except => [:index, :vicosnp]
+in my controller all autenticity_token monsters are scared off. I don’t know if this is a goot idea, and am suprised that all other Ajax.Updaters don’t cry now for authenticity_tokens. Deeper understanding of Rails seems still missing, but the comments on this page are fine tutorials.
+
+regards
+
+patrick collins says
+on October 22nd, 2008 at 04:03 AM
+Ok- I got the page thing working.. I had to change the remote_link_rendered.rb file to have:
+
+protected def page_link(page, text, attributes = {}) @template.link_to_remote(text, {:url => url_for(page), :with => ”’page=#{page}’”, :method => :get}.merge(@remote)) end
+
+LucaPette says
+on October 24th, 2008 at 04:58 AM
+Very interesting… I’ll try your solution just tomorrow, it’s a very elegant one. Thank you.
+
+Sorry, comments are closed for this article.
+
+Copyright © 2006-2009 Redline Software Inc. All rights reserved. Weblog powered by Mephisto.
